@@ -1,0 +1,4 @@
+# 6. Выдать все пары Городов таких, что  Поставщик из первого Города поставляет для Проекта из второго Города.
+select S.CITY, J.CITY
+from ( (S inner join SPJ on S.SNO = SPJ.SNO) inner join J on SPJ.JNO = J.JNO )
+;

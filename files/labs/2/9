@@ -1,0 +1,5 @@
+# 9. Выдать все пары Номеров Деталей таких, что некоторый Поставщик поставляет обе эти Детали.
+select distinct S1.PNO, S2.PNO
+from SPJ as S1 inner join SPJ as S2 on S1.SNO = S2.SNO
+where S1.PNO <> S2.PNO
+;

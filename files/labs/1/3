@@ -1,0 +1,2 @@
+# 3. Выдать список Номеров Поставщиков поставляющих для Проекта J1.
+select distinct SNO from SPJ where JNO = "J1";

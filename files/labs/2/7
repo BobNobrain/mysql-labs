@@ -1,0 +1,9 @@
+# 7. Выдать список Деталей, поставляемых для некоторого Проекта Поставщиком из того же Города, что и Проект.
+select P.*
+from (P inner join (
+	S inner join (
+		J inner join SPJ on J.JNO = SPJ.JNO
+	) on S.SNO = SPJ.SNO
+) on P.PNO = SPJ.PNO)
+where S.CITY = J.CITY
+;
