@@ -11,7 +11,7 @@ CREATE TABLE P (
 	PNO char(2) NOT NULL,
 	PNAME varchar(10) NOT NULL,
 	COLOR varchar(10),
-	WIEGHT int NOT NULL,
+	WEIGHT int NOT NULL,
 	CITY varchar(10) NOT NULL
 );
 ALTER TABLE P
