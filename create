@@ -1,0 +1,4 @@
+#!/bin/bash
+echo ":: Creating container sqlab ::"
+docker run --name sqlab -e MYSQL_ROOT_PASSWORD=1111 -d mysql
+docker stop sqlab
