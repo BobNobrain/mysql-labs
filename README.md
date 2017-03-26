@@ -7,7 +7,7 @@ Environment for doing sql labs. Includes:
 
 ## Creating Container
 
-_NB: you need (docker)[docker.com] for using this environment_
+_NB: you need [docker](http://docker.com) for using this environment_
 
 _NB: don't forget to `chmod +x` for scripts_
 
