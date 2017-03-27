@@ -1,2 +1,9 @@
 # 3. Выдать Номера Деталей, поставляемых для каких либо Проектов в Лондоне.
-
+select distinct R.PNO
+from (
+	select J.JNO, J.CITY, SPJ.PNO
+	from SPJ, J
+	where SPJ.JNO = J.JNO
+) as R
+where R.CITY = 'London'
+;
