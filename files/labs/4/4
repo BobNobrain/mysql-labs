@@ -1,2 +1,9 @@
 # 4. Выдать список номеров Проектов, для которых Детали полностью поставляет Поставщик S1.
-
+select O.JNO
+from SPJ as O
+where not exists (
+	select *
+	from SPJ as I
+	where I.SNO <> 'S1'
+	and O.JNO = I.JNO
+);
