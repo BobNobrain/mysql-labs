@@ -1,0 +1,2 @@
+# 1. Выдать названия Проектов, для которых поставляет Поставщик S1.
+select jname from j where pno in (select pno from spj where sno = 'S1')
