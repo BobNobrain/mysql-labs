@@ -1,9 +1,15 @@
 # 6. Выдать список Поставщиков, поставляющих одну и ту же Деталь для всех Проектов.
-select distinct O.SNO
-from SPJ as O
-where not exists (
-	select *
-	from SPJ as I
-	where O.SNO = I.SNO
-	and O.PNO <> I.PNO
+select distinct A.SNO
+from SPJ as A
+where exists ( -- such part B.PNO that
+	select PNO
+	from SPJ as B
+	where B.SNO = A.SNO -- it is supplied by A.SNO
+	and not exists ( -- such project C.JNO that
+		select JNO
+		from SPJ as C
+		where B.PNO <> C.PNO -- it not supplied with B.PNO
+		and B.SNO = C.SNO -- and is supplied by B.SNO
+		and C.JNO <> B.JNO
+	)
 );

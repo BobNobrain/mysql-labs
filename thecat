@@ -1,0 +1,11 @@
+#!/bin/bash
+
+nl=$'\r\n'
+nlu=$'\n'
+for part in `ls ./files/labs`; do
+	files=$(cat ./files/labs/$part/*)
+	acc="${acc}${nl}# ${part}${nl}${nl}${files//$nlu/$nl}"
+done
+
+echo $acc > catresult.txt
+
